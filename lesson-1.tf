@@ -13,6 +13,10 @@ resource "aws_instance" "my_web_server" {
         Name = "Web Server Build by terraform"
         Owner = "Valentine Kravtsov"
     }
+    
+    lifecycle {
+        prevent_destroy = true
+    }
 }
 
 resource "aws_security_group" "my_web_server" {
